@@ -147,4 +147,7 @@ footer {
     padding-top: 20px;
 } 
 
+.delete-product {
+    cursor: pointer;
+}
 
