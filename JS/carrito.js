@@ -25,6 +25,8 @@ const pintarCarrito = () => {
             <img src="${product.img}">
             <h3>${product.nombre}</h3>
             <p>${product.precio} $</p>
+            <p>Cantidad: ${product.cantidad}</p>
+            <p>Total: ${product.cantidad * product.precio}</p>
      `;
         modalContainer.append(carritoContent)
 
@@ -37,7 +39,7 @@ const pintarCarrito = () => {
         eliminar.addEventListener("click", eliminarProducto);
     });
 
-    const total = carrito.reduce((acc, el) => acc + (parseFloat(el.precio) || 0), 0);
+    const total = carrito.reduce((acc, el) => acc + (parseFloat(el.precio * el.cantidad) || 0), 0);
 
     const totalBuying = document.createElement("div")
     totalBuying.className = "total-content"
