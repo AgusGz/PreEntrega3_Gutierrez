@@ -1,7 +1,8 @@
 /** Const */
-const shopContent = document.getElementById("shopContent")
-const verCarrito = document.getElementById("verCarrito")
-const modalContainer = document.getElementById("modal-container")
+const shopContent = document.getElementById("shopContent");
+const verCarrito = document.getElementById("verCarrito");
+const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 
 let carrito = [];
@@ -42,7 +43,8 @@ productos.forEach((product)=> {
             cantidad: product.cantidad,
        });
       }
-       console.log(carrito)
+       console.log(carrito);
+       carritoCounter();
     });
 });
 

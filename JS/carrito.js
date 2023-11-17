@@ -57,6 +57,12 @@ const eliminarProducto = () => {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId;
     });
-
+    carritoCounter();
     pintarCarrito();
 };
+
+
+const carritoCounter = () => {
+    cantidadCarrito.style.display = "block";
+    cantidadCarrito.innerText = carrito.length;
+}
