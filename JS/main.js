@@ -5,7 +5,7 @@ const modalContainer = document.getElementById("modal-container");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("storageCarrito")) || [];
 
 productos.forEach((product)=> {
   let content = document.createElement("div");
@@ -42,9 +42,17 @@ productos.forEach((product)=> {
             precio: product.precio,
             cantidad: product.cantidad,
        });
-      }
+      
        console.log(carrito);
+       console.log(carrito.length);
        carritoCounter();
-    });
+       saveLocal();
+   }
+   });
 });
+
+
+const saveLocal = () => {
+   localStorage.setItem("storageCarrito", JSON.stringify(carrito))
+};
 
