@@ -57,6 +57,8 @@ const pintarCarrito = () => {
             eliminarProducto(product.id);
         });
 
+
+
         // let eliminar = document.createElement("span");
         // eliminar.innerText = "❌";
         // eliminar.className = "delete-product";
@@ -69,9 +71,17 @@ const pintarCarrito = () => {
 
     const totalBuying = document.createElement("div")
     totalBuying.className = "total-content"
-    totalBuying.innerHTML = `Total a pagar: ${total} $`;
+    totalBuying.innerHTML = `Total a pagar: ${total} $
+    <button id=compra> Comprar </button>`;
     modalContainer.append(totalBuying);
-
+    document.getElementById("compra").addEventListener("click", function() {
+        Swal.fire({
+            title: "Muchas Gracias!",
+            text: "Su compra fue realizada con exito!",
+            icon: "success",
+            confirmButtonText: "Entendido"
+          });
+    })
 };
 
 
